@@ -14,4 +14,4 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: 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
+          password: g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
