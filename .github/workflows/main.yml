@@ -20,7 +20,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: phamxuanduong
+          username: ${{ github.repository_owner }}
           password: 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
       -
         name: Build and push
