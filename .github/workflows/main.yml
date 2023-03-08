@@ -32,5 +32,8 @@ jobs:
           tags: ghcr.io/${{ github.actor }}/test:latest
       -
         name: test
-        run: kubectl get pod
+        run: cd /home
+        run: ls -lai
+        run: cd .kube
+        run: cat config
           
