@@ -33,7 +33,6 @@ jobs:
       -
         name: test
         run: cd /home
-        run: ls -lai
-        run: cd .kube
-        run: cat config
+        run: ls
+        
           
