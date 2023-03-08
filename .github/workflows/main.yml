@@ -32,7 +32,6 @@ jobs:
           tags: ghcr.io/${{ github.actor }}/test:latest
       -
         name: test
-        run: cd /home
-        run: ls
+        run: pwd
         
           
