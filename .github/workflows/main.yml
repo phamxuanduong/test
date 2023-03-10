@@ -17,4 +17,4 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
       -
-        run: microk8s kubectl get pod
+        run: kubectl get pod
