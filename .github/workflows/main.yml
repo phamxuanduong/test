@@ -8,15 +8,12 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      -
-        run: |
+      - run: |
           mkdir ${HOME}/.kube
           echo ${{ secrets.KUBECONFIG }} | base64 --decode > ${HOME}/.kube/config
           cat ${HOME}/.kube/config
-      -
-        run: cat /home/runner/.kube/config
-      -
-        run: pwd
+      - run: cat /home/runner/.kube/config
+      - run: pwd
+      - run: kubectl get pod
