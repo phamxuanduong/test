@@ -16,6 +16,6 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}kubectl config current-context
-          context: default
+          context: microk8s
       -
         run: kubectl get pod
