@@ -8,18 +8,13 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      - name: Set the Kubernetes context
-        uses: azure/k8s-set-context@v2
-        with:
-          method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
-
-      - name: Checkout source code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Deploy to the Kubernetes cluster
-        uses: azure/k8s-deploy@v1
-        with:
-          namespace: default
-          manifests: |
-            ubuntu.yaml
+      - run: |
+          mkdir ${HOME}/.kube
+          echo ${{ secrets.KUBECONFIG }} | base64 --decode > ${HOME}/.kube/config
+          cat ${HOME}/.kube/config
+      - run: cat /home/runner/.kube/config
+      - run: pwd
+      - run: kubectl version --short
+      - run: kubectl get pod
