@@ -18,5 +18,6 @@ jobs:
           cat ${HOME}/.kube/config
       -
         run: kubectl config use-context microk8s
+        run: kubectl version
       -
         run: kubectl get pod
