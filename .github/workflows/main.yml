@@ -15,6 +15,7 @@ jobs:
         uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
+          kubeconfig: ${{ secrets.KUBECONFIG }}kubectl config current-context
+          context: microk8s
       -
         run: kubectl get pod
