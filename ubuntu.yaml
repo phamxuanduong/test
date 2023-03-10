@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-test
+  name: httpd-master
   labels:
-    component: ubuntu-test
+    component: web-master
 spec:
-  nodeName: ubuntu-test
+  nodeName: daica-master
   containers:
-    - name: ubuntu-test
-      image: ghcr.io/phamxuanduong/test:latest
+    - name: httpd-master
+      image: httpd
       ports:
         - containerPort: 80
 
@@ -17,11 +17,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ubuntu-test
+  name: httpd-master
 spec:
   type: ClusterIP
   ports:
     - port: 80
       targetPort: 80
   selector:
-    component: ubuntu-test
+    component: web-master
