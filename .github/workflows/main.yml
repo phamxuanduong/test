@@ -16,13 +16,5 @@ jobs:
           mkdir ${HOME}/.kube
           echo ${{ secrets.KUBECONFIG }} | base64 --decode > ${HOME}/.kube/config
           cat ${HOME}/.kube/config
-      - uses: azure/setup-kubectl@v3
-        with:
-          version: 'v1.26.1'
-        id: install
       -
-        run: kubectl config use-context microk8s
-      -
-        run: kubectl version
-      -
-        run: kubectl get pod
+        run: pwd
