@@ -10,11 +10,4 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - run: |
-          mkdir ${HOME}/.kube
-          echo ${{ secrets.KUBECONFIG }} | base64 --decode > ${HOME}/.kube/config
-          cat ${HOME}/.kube/config
-      - run: cat /home/runner/.kube/config
-      - run: export KUBECONFIG=${HOME}/.kube/config
-      - run: pwd
-      - run: kubectl get pod
+      - run: docker login ghcr.io -u phamxuanduong -p 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
