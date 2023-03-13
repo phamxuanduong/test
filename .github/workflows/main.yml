@@ -16,5 +16,4 @@ jobs:
           cat ${HOME}/.kube/config
       - run: cat /home/runner/.kube/config
       - run: pwd
-      - run: kubectl version --short
-      - run: kubectl get pod
+      - run: kubectl --request-timeout 5m get pod
